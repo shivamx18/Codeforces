@@ -1,0 +1,39 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+void alarmTime(){
+	int alarmNum, sleepHr,sleepMin ;
+	cin >> alarmNum >> sleepHr >> sleepMin;
+
+	int sleepTime = (sleepHr * 60) + sleepMin;
+
+	int alarms[alarmNum];
+
+	for (int i = 0;i<alarmNum;i++){
+		int alarmHr, alarmMin;
+		cin >> alarmHr >> alarmMin;
+		alarms[i] = (alarmHr * 60) + alarmMin;
+	}
+	sort(alarms, alarms+alarmNum);
+
+	for (int i = 0 ; i<alarmNum;i++){
+		if (alarms [i] >= sleepTime){
+			int diff = alarms[i] - sleepTime;
+			cout << diff/60 << " " << diff%60 << "\n";
+			return;
+		}
+	}
+	int diff = (1440 - sleepTime) + alarms[0];
+	cout << diff/60 << " " << diff%60 << "\n";
+}
+
+int main(){
+	int t;
+	cin >> t;
+	while (t--){
+		alarmTime();
+
+	}
+
+	return 0;
+} 
