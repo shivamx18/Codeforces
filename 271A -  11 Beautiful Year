@@ -1,0 +1,33 @@
+#include<bits/stdc++.h>
+using namespace std;
+bool solve(int year){
+	int arr[10] = {0};
+	int digit;
+	while (year > 0){
+		digit = year % 10;
+		arr[digit]++;
+		year /= 10;
+	}
+
+	for (int i = 0; i<10;i++){
+		if (arr[i] > 1){
+			return false;
+		}
+	}
+
+	return true;	
+}
+
+int main(){
+	int year;
+	cin >> year;
+	while (year > 0){
+		if (solve(year + 1)){
+			cout << year + 1 << "\n";
+			break;
+		}
+		year++;
+	}
+
+	return 0;
+} 
