@@ -1,0 +1,47 @@
+#include<bits/stdc++.h>
+using namespace std;
+int digitSum(int num){
+	int sum = 0;
+	while(num>0){
+		sum += num%10;
+		num = num/10;
+	}
+	return sum;
+}
+int main(){
+	int t;
+	cin >> t;
+	while(t--){
+		int m , n,finalAnswer;
+		cin >> m >> n;
+		if (m < n){
+			bool num = true;
+			while(num){
+				if (digitSum(m)%n == 0){
+					finalAnswer = m;
+					num = false;
+				}
+				else{
+					m = m+1;
+				}
+			}
+		}
+		else{
+			bool num = true;
+			while(num){
+				if (digitSum(m)%n == 0){
+					finalAnswer = m;
+					num = false;
+				}
+				else{
+					m = m+1;
+				}
+			}
+		}
+
+		cout << finalAnswer << "\n";
+		finalAnswer = n;
+	}
+
+	return 0;
+}
