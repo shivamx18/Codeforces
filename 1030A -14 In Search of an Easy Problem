@@ -1,0 +1,23 @@
+#include <iostream>
+using namespace std;
+
+int main(){
+    int n;
+    cin >> n;
+    int num1 = 0;
+    
+    for (int i = 0; i<n; i++){
+        int num;
+        cin >> num;
+        num1 = num;
+        if (num1 == 1){
+            cout << "HARD\n";
+            break;
+        }
+    }
+    if (num1 == 0){
+        cout << "EASY\n";
+    }
+
+    return 0;
+}
