@@ -1,0 +1,26 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+
+	ios::sync_with_stdio(false);
+	cin.tie(NULL);
+	int t;
+	cin >> t;
+	while(t--){
+		int totalCount = 0;
+		int n, m, k, H;
+		cin >> n >> m >> k >> H;
+		for (int i=0;i<n;i++){
+			int person;
+			cin >> person;
+			int heightDiff = abs(H-person);
+			if (heightDiff % k == 0 && heightDiff/k>0 && heightDiff/k<m){
+				totalCount++;
+			}
+		}
+		cout << totalCount << "\n";		
+	}
+
+	return 0;
+} 
