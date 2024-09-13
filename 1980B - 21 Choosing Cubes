@@ -1,0 +1,56 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+bool firstFound(int arr[] ,int k, int num){
+	for (int i=0;i<k;i++){
+		if (arr[i] == num){
+			return true;
+			
+		}
+	}
+	return false;
+}
+ 
+bool secondFound(int arr[],int k,int num,int n){
+	for (int i=k;i<n;i++){
+		if (arr[i] == num){
+			return true;
+		}
+	}
+	return false;
+}
+
+
+int main(){
+
+	ios::sync_with_stdio(false);
+	cin.tie(NULL);
+	int t;
+	cin >> t;
+	while(t--){
+		int n, f, k;
+		cin >> n >> f >> k;
+		int arr[n];
+		for (int i=0;i<n;i++) cin >> arr[i];
+		int num = arr[f-1];
+		if (n == k){
+			cout << "YES\n";
+		}
+		else{
+			sort(arr,arr+n);
+			reverse(arr,arr+n);			
+
+			if (firstFound(arr , k , num) == true && secondFound(arr, k,num,n) == true){
+				cout << "MAYBE\n";
+			}
+			else if (secondFound(arr, k , num,n) == true && firstFound(arr , k , num) == false){
+				cout << "NO\n";
+			}
+			else if (firstFound(arr , k , num) == true && secondFound(arr, k , num,n) == false){
+				cout << "YES\n";
+			}
+		}
+	}
+
+	return 0;
+} 
