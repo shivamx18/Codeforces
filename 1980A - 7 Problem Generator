@@ -1,0 +1,38 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+
+	ios::sync_with_stdio(false);
+	cin.tie(NULL);
+	int t;
+	cin >> t;
+	while(t--){
+		int n, m;
+		cin >> n >> m;
+		int minProbReq = 0;
+		int freqArr[7] = {0,0,0,0,0,0,0};
+		for (int i = 0; i < n; i++) {
+            char c;
+            cin >> c;
+            if (c == 'A') freqArr[0]++;
+            else if (c == 'B') freqArr[1]++;
+            else if (c == 'C') freqArr[2]++;
+            else if (c == 'D') freqArr[3]++;
+            else if (c == 'E') freqArr[4]++;
+            else if (c == 'F') freqArr[5]++;
+            else if (c == 'G') freqArr[6]++;
+        }
+		
+
+		for (int i =0;i<7;i++){
+			if (freqArr[i] < m){
+				int diff = m - freqArr[i];
+				minProbReq = minProbReq + diff; 
+			}
+		}
+		cout << minProbReq << "\n";
+	}
+
+	return 0;
+} 
