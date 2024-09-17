@@ -1,0 +1,38 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+void timeConversion(int h1,int h2 ,char arr[]){
+    int hour = h1*10 + h2;
+    if (h1 == 1 && h2 == 2){
+        cout << 12 << arr[2]<<arr[3] << arr[4] << " PM\n";
+    }
+    else if (hour == 0){
+        cout << 12 << arr[2]<<arr[3] << arr[4] << " AM\n";
+    }
+    else if (hour > 12){
+        int x = (hour - 12);
+        int abs_h = abs(x);
+        if (abs_h < 10) cout << 0 << abs_h << arr[2]<<arr[3] << arr[4] << " PM\n";
+        else cout << abs_h << arr[2]<<arr[3] << arr[4] << " PM\n";
+    }
+    else if (hour<=12){
+        if(hour < 10) cout << 0 << hour << arr[2]<<arr[3] << arr[4] << " AM\n";
+        else cout << hour << arr[2]<<arr[3] << arr[4] << " AM\n";
+    }
+}
+
+int main(){
+
+    ios::sync_with_stdio(false);
+    cin.tie(NULL);
+    int t;
+    cin >> t;
+    while(t--){
+        char arr[5];
+        cin >> arr[0] >> arr[1] >> arr[2] >> arr[3] >> arr[4];
+        int h1 = arr[0] - '0';
+        int h2 = arr[1] - '0';
+        timeConversion(h1,h2,arr);
+    }
+    return 0;
+} 
