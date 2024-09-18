@@ -1,0 +1,20 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+
+	ios::sync_with_stdio(false);
+	cin.tie(NULL);
+	int t;
+	cin >> t;
+	while(t--){
+		int n1,n2,n3;
+		cin >> n1 >> n2 >> n3;
+		if (n1 == n2) cout << n3 << "\n";		
+		else if (n2 == n3) cout << n1 << "\n";		
+		else cout << n2 << "\n";
+	}
+
+	return 0;
+}
+
