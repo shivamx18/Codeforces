@@ -1,0 +1,32 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+
+int main()
+{
+	int t;
+	cin >> t;
+	while(t--)
+	{
+		int sum1 = 0,sum2 = 0;
+		for (int i = 0;i<6;i++){
+			if (i<3){
+				char n;
+				cin >> n;
+				int k = n - '0';
+				sum1 += k;
+			}
+			else{
+				char n;
+				cin >> n;
+				int k = n - '0';
+				sum2 += k;				
+			}
+		}
+
+		if (sum1 == sum2) cout << "YES\n";
+		else cout << "NO\n";		
+	}	
+
+	return 0;
+}
