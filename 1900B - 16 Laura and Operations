@@ -1,0 +1,25 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long
+
+int main(){
+
+	ios::sync_with_stdio(false);
+	cin.tie(NULL);
+	int tc;
+	cin >> tc;
+	while(tc--){
+		int a ,b, c;
+		cin >> a >> b >> c;
+		int resultA , resultB, resultC;
+		if (b%2 == c%2) resultA = 1;
+		else resultA = 0;
+		if (a%2 == b%2) resultC = 1;
+		else resultC = 0;
+		if (a%2 == c%2) resultB = 1;
+		else resultB = 0;
+
+		cout << resultA << " " << resultB << " " << resultC << "\n";
+	}
+	return 0;
+}
