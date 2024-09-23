@@ -1,0 +1,34 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int t;
+    cin >> t;
+    while (t--)
+    {
+        long long n;
+        cin >> n;
+        vector<long long> a(n);
+        for (long long i = 0; i < n; i += 1)
+        {
+            cin >> a[i];
+        }
+        long long remove_count = 0;
+        unordered_map<long long, long long> count;
+        long long left = 0;
+        long long right = 0;
+        for (long long right = 0; right < n; right++)
+        {
+            count[a[right]]++;
+            while (count[a[right]] > 1)
+            {
+                count[a[left]]--;
+                left++;
+                remove_count++;
+            }
+        }
+        cout << remove_count << endl;
+    }
+    return 0;
+}
