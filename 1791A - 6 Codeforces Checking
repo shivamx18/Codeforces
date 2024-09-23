@@ -1,0 +1,22 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+bool occurence(char c){
+	string s = "codeforces";
+	for (int i = 0;i<10;i++){
+		if (s[i] == c) return true;
+	}
+	return false;
+}
+
+int main(){
+	int tc;
+	cin >> tc;
+	while(tc--){
+		char c;
+		cin >> c;
+		if (occurence(c)) cout << "YES\n";
+		else cout << "NO\n";
+	}
+	return 0;
+}
