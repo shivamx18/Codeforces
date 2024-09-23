@@ -1,0 +1,25 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long
+#define ar array 
+
+int main(){
+
+	ios::sync_with_stdio(false);
+	cin.tie(NULL);
+	int t ;
+	cin >> t;
+	while (t--){
+		string originalString;
+		cin >> originalString;
+		string upperCaseString;
+
+		for (char c : originalString) {
+    		upperCaseString += toupper(c);
+		}
+
+		if (upperCaseString == "YES") cout << "YES\n";
+		else cout << "NO\n";
+	}
+	return 0;
+}
